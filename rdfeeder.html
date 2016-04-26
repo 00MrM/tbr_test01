@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Regional Rail Fares</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../tbs_test01/c/main.css">
+<!-- React JS 
+  <script src="http://fb.me/react-0.10.0.min.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
+-->
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+<!-- ReactFire -->
+<script src="https://cdn.firebase.com/libs/reactfire/0.6.0/reactfire.min.js"></script>
+<!--Firebase Js -->
+    </head>
+    <body>
+    </body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+/*Firebase*/
+var zonePull = {};
+var infoPull = {};
+var ZoneRef,InfoRef;
+var zP1=0,zP2=1,zP3=2,zP4=3,zP5=4;    
+$(document).ready(function() {
+// Get a database reference to our data
+var InfoRef = new Firebase("https://rrfdata.firebaseio.com/info");
+var ZoneRef = new Firebase("https://rrfdata.firebaseio.com/zones");
+// Attach an asynchronous callback to read the data at our posts reference
+
+ZoneRef.on("value", function(snapshot) {
+  zonePull = snapshot.val();
+    for (i=0; i < zonePull.length; i++) {
+    $("#rrf_zone_o ul").append('<li><p>' + zonePull[i].zone + '</li></p>');
+    console.log( zonePull[i].zone );
+    //console.log( zonePull[i].fares );
+    //console.log( zonePull[i].name);
+    };
+});
+
+InfoRef.on("value", function(snapshot) {
+  infoPull = snapshot.val();
+    console.log( 
+        infoPull.advanced_purchase,
+        infoPull.anytime,
+        infoPull.evening_weekend,
+        infoPull.onboard_purchase,
+        infoPull.weekday
+    );
+});
+    
+}); //end of document ready 
+//// firebase  /////  end  ////
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+    
+    
+        //$('').append('<div class="" id='+ idClip + [i] +'>' + //inner tab
+        //                    '<div class="" style="border-top:3px solid #2F8CF8;">' + 
+        //                  '<div class="iic_title">' +
+        //                  infoWorld[i].Zone +
+        //                  '</div>' +
+        //                  '<div class="iic_author">' +
+       //                   infoWorld[i].Author +
+        //                  '</div>'  
+    
+</script>

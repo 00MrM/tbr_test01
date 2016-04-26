@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Regional Rail Fares</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../tbr_test/c/main.css">
+<!-- React JS 
+  <script src="http://fb.me/react-0.10.0.min.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
+-->
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+<!-- ReactFire -->
+<script src="https://cdn.firebase.com/libs/reactfire/0.6.0/reactfire.min.js"></script>
+<!--Firebase Js -->
+    </head>
+
+<!--################ Regional Rail Jason Data via Firebase ############-->
+    <body>
+        <!--Regional Rail Fare Widget ( rrf for short )-->
+        <div id="rrf_main">
+        <!-- logo header -->
+        <div id="rrf_header">
+        <div id="rrf_logo">
+            <span id="h_logo"></span>
+            <h1>Regional Rail Fares</h1>
+            </div>
+        <div class="clearfix"></div>
+        </div>
+        <!-- logo header -->
+        <!-- RRF Sections -->   
+        <div class="rrf_section" id="rrf_zone_main">
+            <div id="rrf_zone_h">
+                <h3>Where are you going?</h3>
+            </div>
+            <div id="rrf_zone_o">
+            <span class="o_prefix"><h2>Zone </h2></span>
+            <span class="form_arrow">&dtrif; </span>
+            <span class="clearfix"></span>
+            <ul> <!--added each li per zone -->   </ul>
+            </div>
+        </div>
+        <div class="rrf_section" id="rrf_date_main">
+            <div id="rrf_date_h">
+                <h3>When are you riding?</h3>
+            </div>
+            <div id="rrf_date_o">
+            <span class="o_prefix"><h2>Days</h2></span>
+            <span class="form_arrow">&dtrif; </span>
+            <span class="clearfix"></span>
+            <ul> <!--added each li per date -->   </ul>
+            </div>
+            <div class="helper_box">
+            <p></p>
+            </div>
+        </div>
+        <div class="rrf_section" id="rrf_purcharea_main">
+            <div id="rrf_purcharea_h">
+                <h3>Where will you <br/>purchase the fare?</h3>
+            </div>
+            <div id="rrf_purcharea_o">
+            <form>
+  <input type="radio" name="gender" value="op_sk" onclick="op_sk_on()">Station Kiosk<br>
+  <input type="radio" name="gender" value="op_ob" onclick="op_ob_on()"> Onboard
+            </form>
+            </div>
+        </div>
+        <div class="rrf_section" id="rrf_quantity_main">
+            <div id="rrf_quantity_h">
+                <h3>How many <br/> rides do you need?</h3>
+            </div>
+            <div id="rrf_quantity_o">
+                <form>
+                <input type="text" name="rrf_amount"><br>
+                </form>
+            
+            </div>
+        </div>
+        <div class="rrf_section" id="rrf_spacing">
+        <!--this is to prevent overlapping the cost section div over the quantity main div. This will match the height of costmain-->
+        </div>
+        <div class="rrf_section" id="rrf_cost_main">
+        <h3>Your fare will cost</h3>
+        <h2>$0.00</h2>
+        </div>        
+            
+        </div><!-- RRF MAIN END -->
+        <!--Regional Rail Fare Widget End -->
+
+    </body>
+<!--################ Regional Rail Jason Data via Firebase ############-->
+<script src="j/rrfdAction.js"></script>
